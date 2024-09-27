@@ -2,6 +2,14 @@
 
 @section('content')
 <div class="container">
+    <div class="row mt-2">
+        <div class="col-10">
+            <h1>nostri fumetti</h1> 
+        </div>
+        <div class="col-2">
+            <a href="{{route('comics.create')}}" class="btn btn-sm btn-primary rounded-2">aggiungi fumetti</a>
+        </div>
+    </div>
     <div class="row pt-5">
         @foreach ($comics as $comic)
             <div class="col-12 col-md-6 col-lg-2">
