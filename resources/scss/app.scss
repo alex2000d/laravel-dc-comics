@@ -1,1 +1,61 @@
 @import '~bootstrap/scss/bootstrap';
+
+.image img {
+    max-width: 40px;
+}
+
+span {
+    padding-right: 90px;
+}
+
+.z-index {
+    position: relative;
+    overflow: hidden;
+}
+
+.jumbotron {
+    background-size: cover;
+    height: 300px;
+    position: relative;
+
+    .badge {
+        position: absolute;
+        bottom: -25px;
+        left: 90px;
+    }
+}
+
+.bg-footer {
+    background-color: #303030;
+    z-index: 3;
+}
+
+.bg-img {
+    background-size: cover;
+    overflow: hidden;
+
+}
+
+.logo-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.logo {
+    width: 600px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.btn {
+    border-color: #0082F9;
+    border-radius: 0;
+    padding: 10px;
+}
+
+.content img {
+    margin: 0px 10px;
+}

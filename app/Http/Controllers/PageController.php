@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function index(){
-        return view('home');
+
+        $movies = config('db.movies');
+
+        return view('main', compact('movies'))->name('homepage');
     }
 }
