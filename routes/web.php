@@ -14,10 +14,6 @@ use App\Http\Controllers\PageController as PageController;
 |
 */
 
-Route::get('/', [PageController::class, 'index'])->name('home');
-Route::get('/', function () {
-    $movies = config('db.movies');
-    
-     return view('main', compact('movies'));
- })->name('homepage');
+Route::get('/', [PageController::class, 'index'])->name('homepage');
+
 

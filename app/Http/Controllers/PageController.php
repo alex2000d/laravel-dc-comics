@@ -10,6 +10,6 @@ class PageController extends Controller
 
         $movies = config('db.movies');
 
-        return view('main', compact('movies'))->name('homepage');
+        return view('main', compact('movies'));
     }
 }
