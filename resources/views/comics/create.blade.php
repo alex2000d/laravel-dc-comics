@@ -7,7 +7,7 @@
                 <h1 class="text-center">DC Comics: Aggiungi nuovo fumetto</h1>
             </div>
             <div class="col-12 mb-5">
-                <form action="{{route('comics.store')}}" method="post"></form>
+                <form action="{{route('comics.store')}}" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-6">
@@ -38,6 +38,7 @@
                         <button type="submit" class="btn btn-success rounded-2 mt-3">salva</button>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
