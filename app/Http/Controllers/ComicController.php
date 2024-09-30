@@ -40,12 +40,7 @@ class ComicController extends Controller
 
         $new_comic = new Comic();
            $new_comic->fill($form_data);
-        // $comic->title = $form_data['title'];
-        // $comic->author = $form_data['author'];
-        // $comic->publisher = $form_data['publisher'];
-        // $comic->release_date = $form_data['release_date'];
-        // $comic->price = $form_data['price'];
-        // $comic->description = $form_data['description'];
+        
 
         $new_comic->save();
 
@@ -72,7 +67,8 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::find($id);
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -82,9 +78,12 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $form_data = $request->all();
+        $comic->update($form_data);
+
+        return redirect()->route('comics.index', ['comic'=> $comic->id]);
     }
 
     /**
