@@ -27,7 +27,11 @@
                             <a href="{{route('comics.edit', ['comic' => $comic->id] )}}"class="btn btn-sm btn-square btn-warning rounded-2"> modifica</a>
                         </div>
                         <div class=" col-12 col-lg-4">
-                            <a href="{{route('comics.edit', ['comic' => $comic->id] )}}"class="btn btn-sm btn-square btn-danger rounded-2"> cancella</a>
+                            <form action="{{route('comics.destroy', ['comic' => $comic->id])}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                            <button type="submit" onclick="return confirm('sei sicuro? il mondo potrebbe collassare, fai la scelta giusta soldato.')" class="btn btn-sm btn-square btn-danger rounded-2"> cancella</button>
+                            </form>
                         </div>
                        </div>
                        
