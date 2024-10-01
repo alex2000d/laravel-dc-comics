@@ -36,6 +36,22 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+              'title' => 'required|max:255',
+              'author' => 'required|max:255',
+              'publisher' => 'required|max:255',
+            ],
+            [
+                'title.required' => 'il titolo è obbligatorio',
+                'title.max' => 'il titolo deve essere lungo al massimo 255 caratteri',
+                'author.required' => 'l\'autore è obbligatorio',
+                'author.max' => 'l\'autore deve essere lungo al massimo 255 caratteri',
+                'publisher.required' => 'la pubblicazione è obbligatoria',
+                'publisher.max' => 'la pubblicazione deve essere lunga al massimo 255 caratteri',
+            ]
+        );
+
         $form_data = $request->all();
 
         $new_comic = new Comic();
@@ -80,6 +96,23 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+ 
+        $request->validate(
+            [
+              'title' => 'required|max:255',
+              'author' => 'required|max:255',
+              'publisher' => 'required|max:255',
+            ],
+            [
+                'title.required' => 'il titolo è obbligatorio',
+                'title.max' => 'il titolo deve essere lungo al massimo 255 caratteri',
+                'author.required' => 'l\'autore è obbligatorio',
+                'author.max' => 'l\'autore deve essere lungo al massimo 255 caratteri',
+                'publisher.required' => 'la pubblicazione è obbligatoria',
+                'publisher.max' => 'la pubblicazione deve essere lunga al massimo 255 caratteri',
+            ]
+        );
+
         $form_data = $request->all();
         $comic->update($form_data);
 
